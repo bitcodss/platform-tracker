@@ -44,10 +44,10 @@ export default function ExecutiveSummary() {
           </ResponsiveContainer>
           <div className="flex flex-wrap gap-3 justify-center -mt-1">
             {marketShareData.map(p => (
-              <span key={p.name} className="flex items-center gap-1.5 text-xs text-white/50">
+              <span key={p.name} className="flex items-center gap-1.5 text-xs text-white/95">
                 <span className="w-2 h-2 rounded-full" style={{ background: p.fill }} />
                 {p.name}
-                <strong className="text-white/80">{p.value}%</strong>
+                <strong className="text-white/95">{p.value}%</strong>
               </span>
             ))}
           </div>
@@ -57,10 +57,10 @@ export default function ExecutiveSummary() {
           <ResponsiveContainer width="100%" height={260}>
             <LineChart data={monthlyTrend} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#666' }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 11, fill: '#666' }} axisLine={false} tickLine={false} />
+              <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#aaa' }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 11, fill: '#aaa' }} axisLine={false} tickLine={false} />
               <Tooltip {...DARK_TOOLTIP} />
-              <Legend wrapperStyle={{ fontSize: 11, color: '#888' }} />
+              <Legend wrapperStyle={{ fontSize: 11, color: '#bbb' }} />
               <Line type="monotone" dataKey="Shopee"    stroke="#EE4D2D" strokeWidth={2} dot={false} />
               <Line type="monotone" dataKey="Lazada"    stroke="#6B75E8" strokeWidth={2} dot={false} />
               <Line type="monotone" dataKey="TikTokShop" stroke="#69C9D0" strokeWidth={2} dot={false} name="TikTok Shop" />
@@ -77,7 +77,7 @@ export default function ExecutiveSummary() {
             <thead>
               <tr className="border-b border-white/[0.06]">
                 {['Platform', 'Market Share', 'Avg Basket', 'Freq/mo', 'Top Category', 'Core Buyer'].map(h => (
-                  <th key={h} className="text-left py-2.5 px-3 text-white/35 font-medium uppercase tracking-wider text-[10px]">{h}</th>
+                  <th key={h} className="text-left py-2.5 px-3 text-white/90 font-medium uppercase tracking-wider text-[10px]">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -92,14 +92,14 @@ export default function ExecutiveSummary() {
                   <td className="py-3 px-3">
                     <span className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: row.color, boxShadow: `0 0 6px ${row.color}80` }} />
-                      <span className="font-semibold text-white/80">{row.name}</span>
+                      <span className="font-semibold text-white/95">{row.name}</span>
                     </span>
                   </td>
                   <td className="py-3 px-3 font-bold" style={{ color: row.color }}>{row.share}</td>
-                  <td className="py-3 px-3 text-white/60">{row.basket}</td>
-                  <td className="py-3 px-3 text-white/60">{row.freq}</td>
-                  <td className="py-3 px-3 text-white/45">{row.cat}</td>
-                  <td className="py-3 px-3 text-white/35">{row.profile}</td>
+                  <td className="py-3 px-3 text-white/85">{row.basket}</td>
+                  <td className="py-3 px-3 text-white/85">{row.freq}</td>
+                  <td className="py-3 px-3 text-white/95">{row.cat}</td>
+                  <td className="py-3 px-3 text-white/90">{row.profile}</td>
                 </tr>
               ))}
             </tbody>

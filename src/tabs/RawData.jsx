@@ -46,12 +46,12 @@ export default function RawData() {
         <div className="flex items-end justify-between mb-5">
           <div>
             <span className="text-4xl font-bold text-gradient">{totalCompleted}</span>
-            <span className="text-lg text-white/30 ml-1">/ {totalQuota}</span>
-            <p className="text-[11px] text-white/35 mt-1 font-light">Total completed interviews</p>
+            <span className="text-lg text-white/65 ml-1">/ {totalQuota}</span>
+            <p className="text-[11px] text-white/90 mt-1 font-light">Total completed interviews</p>
           </div>
           <div className="text-right">
             <span className="text-3xl font-bold text-[#4ade80]">{Math.round(totalCompleted / totalQuota * 100)}%</span>
-            <p className="text-[11px] text-white/35 mt-1 font-light">Overall completion</p>
+            <p className="text-[11px] text-white/90 mt-1 font-light">Overall completion</p>
           </div>
         </div>
 
@@ -72,9 +72,9 @@ export default function RawData() {
                       ? <CheckCircle size={13} className="text-[#4ade80]" />
                       : <Clock size={13} className="text-amber-400" />
                     }
-                    <span className="text-sm text-white/60">{r.region}</span>
+                    <span className="text-sm text-white/85">{r.region}</span>
                   </div>
-                  <span className="text-xs text-white/35">{r.completed}/{r.n} <span className="text-white/50 font-medium">({pct}%)</span></span>
+                  <span className="text-xs text-white/90">{r.completed}/{r.n} <span className="text-white/95 font-medium">({pct}%)</span></span>
                 </div>
                 <div className="w-full h-1 rounded-full" style={{ background: 'rgba(255,255,255,0.05)' }}>
                   <div className="h-1 rounded-full transition-all"
@@ -94,7 +94,7 @@ export default function RawData() {
             <thead>
               <tr style={{ background: 'rgba(255,255,255,0.03)' }}>
                 {PREVIEW_COLS.map(c => (
-                  <th key={c} className="text-left py-2.5 px-3 text-white/30 font-medium uppercase tracking-wider text-[10px]">{COL_LABELS[c]}</th>
+                  <th key={c} className="text-left py-2.5 px-3 text-white/65 font-medium uppercase tracking-wider text-[10px]">{COL_LABELS[c]}</th>
                 ))}
               </tr>
             </thead>
@@ -102,7 +102,7 @@ export default function RawData() {
               {respondents.slice(0, 8).map(row => (
                 <tr key={row.resp_id} className="border-t hover:bg-white/[0.02] transition-colors" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
                   {PREVIEW_COLS.map(c => (
-                    <td key={c} className={`py-2 px-3 whitespace-nowrap ${c === 'resp_id' ? 'font-mono text-white/25' : 'text-white/55'}`}>
+                    <td key={c} className={`py-2 px-3 whitespace-nowrap ${c === 'resp_id' ? 'font-mono text-white/85' : 'text-white/85'}`}>
                       {c === 'basket_thb' ? `฿${row[c].toLocaleString()}` : row[c]}
                     </td>
                   ))}
@@ -111,7 +111,7 @@ export default function RawData() {
             </tbody>
           </table>
           <div className="px-3 py-2" style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-            <p className="text-[10px] text-white/25">Showing 8 of {respondents.length} · Full dataset downloaded</p>
+            <p className="text-[10px] text-white/85">Showing 8 of {respondents.length} · Full dataset downloaded</p>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export default function RawData() {
             </button>
           ))}
         </div>
-        <p className="text-[10px] text-white/25 mt-3 text-center font-light">
+        <p className="text-[10px] text-white/85 mt-3 text-center font-light">
           XLSX: Raw Data + Summary sheets · SPSS: variable & value labels · CSV: plain text
         </p>
       </ChartCard>
@@ -157,8 +157,8 @@ export default function RawData() {
             <div key={v.var} className="flex items-start gap-2 text-xs py-1">
               <code className="text-[11px] px-1.5 py-0.5 rounded font-mono shrink-0 text-teal"
                 style={{ background: 'rgba(42,212,196,0.1)' }}>{v.var}</code>
-              <span className="text-white/25 shrink-0 text-[10px] mt-0.5">{v.type}</span>
-              <span className="text-white/45 font-light">{v.desc}</span>
+              <span className="text-white/85 shrink-0 text-[10px] mt-0.5">{v.type}</span>
+              <span className="text-white/95 font-light">{v.desc}</span>
             </div>
           ))}
         </div>

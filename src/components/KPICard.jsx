@@ -12,18 +12,18 @@ export default function KPICard({ title, value, unit, subtitle, trend, accent = 
       className="rounded-xl p-5 card-glow transition-all"
       style={{ background: '#111111', borderColor: a.border }}
     >
-      <p className="text-[11px] font-medium uppercase tracking-widest text-white/40">{title}</p>
+      <p className="text-[11px] font-medium uppercase tracking-widest text-white/75">{title}</p>
       <div className="mt-3 flex items-end gap-1.5">
         <span className="text-3xl font-bold" style={{ color: a.val }}>{value}</span>
-        {unit && <span className="text-xs text-white/40 mb-1 font-light">{unit}</span>}
+        {unit && <span className="text-xs text-white/75 mb-1 font-light">{unit}</span>}
       </div>
-      {subtitle && <p className="text-[11px] mt-1.5 text-white/30 font-light">{subtitle}</p>}
+      {subtitle && <p className="text-[11px] mt-1.5 text-white/65 font-light">{subtitle}</p>}
       {trend !== undefined && (
         <p className="text-[11px] mt-3 font-medium">
           <span style={{ color: trend > 0 ? '#4ade80' : '#f87171' }}>
             {trend > 0 ? '▲' : '▼'} {Math.abs(trend)}%
           </span>
-          <span className="text-white/25 ml-1">vs last month</span>
+          <span className="text-white/85 ml-1">vs last month</span>
         </p>
       )}
     </div>

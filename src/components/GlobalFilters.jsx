@@ -14,16 +14,16 @@ export default function GlobalFilters({ filters, onChange }) {
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <div className="flex items-center gap-1.5 text-white/40 text-xs font-medium">
+      <div className="flex items-center gap-1.5 text-white/75 text-xs font-medium">
         <SlidersHorizontal size={13} />
         <span>Filters</span>
       </div>
 
       {FILTER_DEFS.map(({ label, key, options }) => (
         <div key={key} className="flex items-center gap-1.5">
-          <label className="text-[11px] text-white/35">{label}</label>
+          <label className="text-[11px] text-white/90">{label}</label>
           <select
-            className="text-xs bg-[#161616] border border-white/[0.08] text-white/70 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-teal/50 cursor-pointer appearance-none pr-6"
+            className="text-xs bg-[#161616] border border-white/[0.08] text-white/90 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-teal/50 cursor-pointer appearance-none pr-6"
             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center' }}
             value={filters[key]}
             onChange={e => sel(key, e.target.value)}

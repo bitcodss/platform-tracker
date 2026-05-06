@@ -45,7 +45,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-sm font-bold text-white tracking-wide">Online Platform Tracker</h1>
-              <p className="text-[11px] text-white/40 mt-0.5 font-light">Thailand E-Commerce · N=1,000 · 2025</p>
+              <p className="text-[11px] text-white/75 mt-0.5 font-light">Thailand E-Commerce · N=1,000 · 2025</p>
             </div>
           </div>
           <div className="hidden sm:flex items-center gap-2">
@@ -74,7 +74,7 @@ export default function App() {
                   className={`flex items-center gap-2 px-5 py-4 text-xs font-medium border-b-2 whitespace-nowrap transition-all cursor-pointer bg-transparent ${
                     active
                       ? 'border-teal text-teal'
-                      : 'border-transparent text-white/40 hover:text-white/70 hover:border-white/20'
+                      : 'border-transparent text-white/75 hover:text-white/90 hover:border-white/20'
                   }`}
                 >
                   <Icon size={14} />
@@ -95,7 +95,7 @@ export default function App() {
       {hasActiveFilter && (
         <div className="max-w-7xl w-full mx-auto px-6 pt-3">
           <div className="flex items-center gap-2 flex-wrap text-xs">
-            <span className="text-white/40">Filtered by:</span>
+            <span className="text-white/75">Filtered by:</span>
             {Object.entries(filters)
               .filter(([, v]) => !v.startsWith('All') && v !== 'All')
               .map(([k, v]) => (
@@ -103,7 +103,7 @@ export default function App() {
                   {v}
                 </span>
               ))}
-            <span className="text-white/25 ml-1">(mock — UI demo)</span>
+            <span className="text-white/85 ml-1">(mock — UI demo)</span>
           </div>
         </div>
       )}
@@ -115,7 +115,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="max-w-7xl w-full mx-auto px-6 py-5 border-t border-white/[0.05] mt-8">
-        <p className="text-[11px] text-white/25 text-center font-light">
+        <p className="text-[11px] text-white/85 text-center font-light">
           Online Platform Tracking · Thailand · N=1,000 · Prototype — data is illustrative
         </p>
       </footer>

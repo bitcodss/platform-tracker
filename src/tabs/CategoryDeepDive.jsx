@@ -32,10 +32,10 @@ export default function CategoryDeepDive() {
         <ResponsiveContainer width="100%" height={270}>
           <BarChart data={categoryClusterData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-            <XAxis dataKey="cluster" tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
-            <YAxis tickFormatter={v => `฿${v}`} tick={{ fontSize: 11, fill: '#555' }} axisLine={false} tickLine={false} />
+            <XAxis dataKey="cluster" tick={{ fontSize: 12, fill: '#bbb' }} axisLine={false} tickLine={false} />
+            <YAxis tickFormatter={v => `฿${v}`} tick={{ fontSize: 11, fill: '#999' }} axisLine={false} tickLine={false} />
             <Tooltip {...DARK_TOOLTIP} formatter={v => `฿${v}`} />
-            <Legend wrapperStyle={{ fontSize: 11, color: '#888' }} />
+            <Legend wrapperStyle={{ fontSize: 11, color: '#bbb' }} />
             <Bar dataKey="Shopee"     fill="#EE4D2D" radius={[4,4,0,0]} maxBarSize={22} />
             <Bar dataKey="Lazada"     fill="#6B75E8" radius={[4,4,0,0]} maxBarSize={22} />
             <Bar dataKey="TikTokShop" fill="#69C9D0" radius={[4,4,0,0]} maxBarSize={22} name="TikTok Shop" />
@@ -51,10 +51,10 @@ export default function CategoryDeepDive() {
             <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: `${CLUSTER_COLORS[c.cluster]}18`, color: CLUSTER_COLORS[c.cluster] }}>
               {c.cluster}
             </span>
-            <p className="text-sm font-semibold text-white/70 mt-2.5">
+            <p className="text-sm font-semibold text-white/90 mt-2.5">
               Leader: <span className="text-white">{c.leader}</span>
             </p>
-            <p className="text-[11px] text-white/35 mt-1.5 font-light leading-relaxed">{c.insight}</p>
+            <p className="text-[11px] text-white/90 mt-1.5 font-light leading-relaxed">{c.insight}</p>
           </div>
         ))}
       </div>
@@ -66,7 +66,7 @@ export default function CategoryDeepDive() {
             <thead>
               <tr className="border-b border-white/[0.06]">
                 {['Category', 'Cluster', 'Shopee', 'Lazada', 'TikTok Shop', 'Temu', 'Leader'].map(h => (
-                  <th key={h} className="text-left py-2.5 px-3 text-white/30 font-medium uppercase tracking-wider text-[10px]">{h}</th>
+                  <th key={h} className="text-left py-2.5 px-3 text-white/65 font-medium uppercase tracking-wider text-[10px]">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -75,7 +75,7 @@ export default function CategoryDeepDive() {
                 const badge = TOP_BADGE[row.top] || TOP_BADGE.Shopee;
                 return (
                   <tr key={i} className="border-b border-white/[0.04] hover:bg-white/[0.02] transition-colors">
-                    <td className="py-3 px-3 font-medium text-white/70">{row.category}</td>
+                    <td className="py-3 px-3 font-medium text-white/90">{row.category}</td>
                     <td className="py-3 px-3">
                       <span className="text-[10px] px-2 py-0.5 rounded-full font-medium"
                         style={{ background: `${CLUSTER_COLORS[row.cluster]}18`, color: CLUSTER_COLORS[row.cluster] }}>
