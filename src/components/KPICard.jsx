@@ -1,25 +1,29 @@
-export default function KPICard({ title, value, unit, subtitle, trend, color = 'blue' }) {
-  const colors = {
-    blue: 'bg-blue-50 border-blue-200 text-blue-700',
-    orange: 'bg-orange-50 border-orange-200 text-orange-700',
-    green: 'bg-green-50 border-green-200 text-green-700',
-    purple: 'bg-purple-50 border-purple-200 text-purple-700',
+export default function KPICard({ title, value, unit, subtitle, trend, accent = 'teal' }) {
+  const accents = {
+    teal:   { val: '#2AD4C4', bg: 'rgba(42,212,196,0.08)',  border: 'rgba(42,212,196,0.15)' },
+    terra:  { val: '#D4724A', bg: 'rgba(212,114,74,0.08)',  border: 'rgba(212,114,74,0.15)' },
+    purple: { val: '#a78bfa', bg: 'rgba(167,139,250,0.08)', border: 'rgba(167,139,250,0.15)' },
+    blue:   { val: '#60a5fa', bg: 'rgba(96,165,250,0.08)',  border: 'rgba(96,165,250,0.15)' },
   };
+  const a = accents[accent] || accents.teal;
 
   return (
-    <div className={`rounded-xl border p-5 ${colors[color]}`}>
-      <p className="text-xs font-medium uppercase tracking-wide opacity-70">{title}</p>
-      <div className="mt-2 flex items-end gap-1">
-        <span className="text-3xl font-bold">{value}</span>
-        {unit && <span className="text-sm font-medium mb-1 opacity-70">{unit}</span>}
+    <div
+      className="rounded-xl p-5 card-glow transition-all"
+      style={{ background: '#111111', borderColor: a.border }}
+    >
+      <p className="text-[11px] font-medium uppercase tracking-widest text-white/40">{title}</p>
+      <div className="mt-3 flex items-end gap-1.5">
+        <span className="text-3xl font-bold" style={{ color: a.val }}>{value}</span>
+        {unit && <span className="text-xs text-white/40 mb-1 font-light">{unit}</span>}
       </div>
-      {subtitle && <p className="text-xs mt-1 opacity-60">{subtitle}</p>}
-      {trend && (
-        <p className="text-xs mt-2 font-medium">
-          <span className={trend > 0 ? 'text-green-600' : 'text-red-500'}>
+      {subtitle && <p className="text-[11px] mt-1.5 text-white/30 font-light">{subtitle}</p>}
+      {trend !== undefined && (
+        <p className="text-[11px] mt-3 font-medium">
+          <span style={{ color: trend > 0 ? '#4ade80' : '#f87171' }}>
             {trend > 0 ? '▲' : '▼'} {Math.abs(trend)}%
           </span>
-          <span className="opacity-60 ml-1">vs last month</span>
+          <span className="text-white/25 ml-1">vs last month</span>
         </p>
       )}
     </div>
