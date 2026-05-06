@@ -23,7 +23,7 @@ export default function GlobalFilters({ filters, onChange }) {
         <div key={key} className="flex items-center gap-1.5">
           <label className="text-[11px] text-white/90">{label}</label>
           <select
-            className="text-xs bg-[#161616] border border-white/[0.08] text-white/90 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-teal/50 cursor-pointer appearance-none pr-6"
+            className="text-xs bg-[#2a2a2a] border border-white/20 text-white rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-teal/60 cursor-pointer appearance-none pr-6 hover:border-white/40 transition-colors"
             style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center' }}
             value={filters[key]}
             onChange={e => sel(key, e.target.value)}
