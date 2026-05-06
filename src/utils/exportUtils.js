@@ -77,7 +77,7 @@ export function exportXLSX() {
 }
 
 export async function exportSPSS() {
-  const res = await fetch('http://localhost:3001/api/export/spss');
+  const res = await fetch('/api/export/spss');
   if (!res.ok) throw new Error('SPSS export server unavailable');
   const blob = await res.blob();
   download(blob, 'platform_tracker_data.sav');
